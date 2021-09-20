@@ -27,9 +27,7 @@ namespace Task5
         public void ConfigureServices(IServiceCollection services)
         {
             AppDomain.CurrentDomain.SetData("DataDirectory", Environment.CurrentDirectory);
-            Debug.WriteLine(Environment.CurrentDirectory);
             services.AddDbContext<GameContext>(options => options.UseSqlServer(Configuration.GetConnectionString("UsersDataConnection")));
-            Debug.WriteLine("!!!"+ Configuration.GetConnectionString("UsersDataConnection"));
             services.AddRazorPages();
             services.AddSignalR();
             services.AddDistributedMemoryCache();
