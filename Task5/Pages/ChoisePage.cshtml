@@ -1,0 +1,36 @@
+﻿@page
+@model Task5.Pages.ChoisePageModel
+@{
+}
+
+<form action="" method="post">
+    <h1 class="display-4 view-center">Welcome: @ViewData["Name"] <Button type="submit" asp-route-Act="Rename" class="game-button-mini game-button">Сменить имя</Button></h1>
+
+
+    <div id="loginBlock" class="view-center">
+        <Button type="submit" asp-route-Act="AddGame" class="game-button">Создать игру</Button>
+    </div>
+
+    <div id="loginBlock" class="view-center">
+
+        <label class="control-label">Ходов:</label>  <select name="ChoiseRules" asp-items="Model.Rules" class="form-control"></select>
+    </div>
+
+        <div class="view-center">
+            <Button type="submit" asp-route-Act="ReloadPage" class="game-button">Обновить</Button>
+        </div>
+
+
+
+
+        <table class="table">
+            @foreach (var item in Model.Games)
+            {
+                <tr>
+                    <td>@item.GameCreator</td>
+                    <td>@item.Rules</td>
+                    <td><Button type="submit" asp-route-Act="JoinGame" asp-route-ConnectId=@item.id  class="game-button">Присоедениться к игре</Button></td>
+                </tr>
+            }
+        </table>
+</form>

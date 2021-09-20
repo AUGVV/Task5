@@ -1,0 +1,19 @@
+﻿@page
+@using Microsoft.AspNetCore.Http
+@model IndexModel
+@{
+    ViewData["Name"] = "";
+}
+
+<h1 class="view-center">Ведите имя</h1>
+
+<form action="" method="get">
+    <div id="loginBlock" class="view-center">
+        <input id="UserName" name="UserName" type="text" />
+    </div>
+    <div class="view-center">
+        <Button id="loginBtn" type="submit" class="game-button">В игру</Button>
+    </div>
+</form>
+
+
