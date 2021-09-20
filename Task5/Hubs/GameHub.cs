@@ -16,16 +16,8 @@ namespace Task5.Hubs
             await Clients.All.SendAsync("Send", message, userName);
         }
 
-
-
- 
-
         public GameHub()
         {
-
-           
-        
-
 
         }
         static List<StepModel> Steps = new List<StepModel>();
